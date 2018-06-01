@@ -140,7 +140,7 @@ public:
 	{
 		if (n < 0 || n >= Linked_list_number) return Type();
 		PNODE p = head;
-		while (n > 0)
+		while (n >= 0)
 		{
 			p = p->next;
 			n--;
@@ -216,7 +216,7 @@ public:
 		if (empty()) return;
 		if (n < 0 || n >= Linked_list_number) return;
 		PNODE p = head;
-		while (n > 0)
+		while (n >= 0)
 		{
 			p = p->next;
 			n--;
