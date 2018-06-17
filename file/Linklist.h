@@ -15,10 +15,10 @@ private:
 	};
 	typedef name NODE;
 	typedef NODE* PNODE;
-	
+
 	//链表元素个数
 	int Linked_list_number;
-	
+
 	//头结点
 	PNODE head;
 
