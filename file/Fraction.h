@@ -7,7 +7,7 @@
 
 class Fraction
 {
-private:
+public:
 
 	int Numerator;//分子
 	int Denominator;//分母
@@ -18,6 +18,7 @@ private:
 	void Simplificate()
 	{
 		if (Numerator == 0) Denominator = 0;
+		if (Denominator < 0) Numerator = -Numerator;
 		int Common_Divisor = Gcd((Numerator < 0) ? -Numerator : Numerator, Denominator);
 		switch (Common_Divisor)
 		{
@@ -128,11 +129,6 @@ public:
 	{
 		string Tmp;
 		bool isNegative = false;
-		if (Numerator < 0) isNegative = true;
-		if (isNegative)
-		{
-			Tmp += '(';
-		}
 		if (Denominator == 1)
 		{
 			Tmp += IntoString(Numerator);
@@ -142,10 +138,6 @@ public:
 			Tmp += IntoString(Numerator);
 			Tmp += '/';
 			Tmp += IntoString(Denominator);
-		}
-		if (isNegative)
-		{
-			Tmp += ')';
 		}
 		return Tmp;
 	}
@@ -404,10 +396,10 @@ public:
 
 	/*Fraction operator / (Fraction Operand)
 	{
-		if (Operand.isZero())
-			throw 0;
-		else if (isZero())
-			return *this;*/
+	if (Operand.isZero())
+	throw 0;
+	else if (isZero())
+	return *this;*/
 	//	else
 	//	{
 	//		Fraction tmp;
@@ -487,11 +479,11 @@ public:
 	//	}
 	//}
 
-	friend Fraction operator ^ (Fraction A,int B)
+	friend Fraction operator ^ (Fraction A, int B)
 	{
 		if (A.isZero() && B == 0)
 			throw 0;
-		else if (A.isZero() == 0)
+		else if (A.isZero())
 			return Fraction();
 		else if (B == 0)
 			return Fraction(1);
