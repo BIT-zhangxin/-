@@ -10,7 +10,7 @@ private:
 
 	//随机数
 	RANDOM R;
-	
+
 	//事件个数
 	int EventNumber;
 
